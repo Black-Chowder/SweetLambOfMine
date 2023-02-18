@@ -13,7 +13,7 @@ namespace BlackMagic
         TDMovement movement;
         TDFriction friction;
 
-        Flamethrower flamethrower;
+        WeaponManager weaponManager;
 
         const string classId = "Lamb";
         public Lamb(Vector2 pos) : base(pos, classId)
@@ -37,9 +37,9 @@ namespace BlackMagic
             friction = new TDFriction(this);
             AddTrait(friction);
 
-            //Flamethrower
-            flamethrower = new Flamethrower(this);
-            AddTrait(flamethrower);
+            //Weapon Manager
+            weaponManager = new WeaponManager(this);
+            AddTrait(weaponManager);
         }
 
         public override void Draw()

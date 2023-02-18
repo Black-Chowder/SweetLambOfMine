@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BlackMagic
 {
-    public class Flamethrower : Trait, TDraws
+    public class Flamethrower : Trait, TDraws, IWeapon
     {
         const float range = 150f;
 
@@ -24,6 +24,8 @@ namespace BlackMagic
         List<Ray> rays;
 
         MouseState mouse;
+
+        public Texture2D WeaponIconTexture => throw new NotImplementedException();
 
         public Flamethrower(Entity parent, byte priority = 100) : base(parent, priority)
         {
@@ -74,6 +76,11 @@ namespace BlackMagic
                 for (int i = 0; i < rays.Count; i++)
                     rays[i].drawRay(Globals.spriteBatch);
             }
+        }
+
+        public void PassiveUpdate(GameTime gt)
+        {
+            throw new NotImplementedException();
         }
     }
 }

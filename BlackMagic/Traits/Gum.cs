@@ -109,6 +109,12 @@ namespace BlackMagic
 
             for (LinkedListNode<Entity[]> node = pairings.First; node != null; node = node.Next)
             {
+                if (!node.Value[0].exists || !node.Value[1].exists)
+                {
+                    pairings.Remove(node);
+                    continue;
+                }
+
                 Entity e1 = node.Value[0];
                 Entity e2 = node.Value[1];
 
@@ -131,7 +137,14 @@ namespace BlackMagic
         {
             if (projectile != null) projectile.Draw();
 
-            //TODO: Draw connections between enemeies
+            //Draw connections between enemeies
+            foreach (Entity[] pairing in pairings)
+            {
+                Entity e1 = pairing[0];
+                Entity e2 = pairing[1];
+
+                DrawUtils.DrawLine(Globals.spriteBatch, e1.Pos, e2.Pos, Color.Pink, 5);
+            }
         }
 
         public void PassiveUpdate(GameTime gt)

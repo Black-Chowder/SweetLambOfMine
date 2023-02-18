@@ -26,6 +26,7 @@ namespace BlackMagic
 
         Texture2D flamethrowerIcon;
         Texture2D gumIcon;
+        Texture2D sodaIcon;
 
         const string name = "WeaponManager";
         public WeaponManager(Entity parent) : base(name, parent)
@@ -44,6 +45,7 @@ namespace BlackMagic
 
             flamethrowerIcon = Globals.content.Load<Texture2D>("sheep_flame");
             gumIcon = Globals.content.Load<Texture2D>("sheep_gum");
+            sodaIcon = Globals.content.Load<Texture2D>("sheep_soda");
         }
 
         public override void Update(GameTime gameTime)
@@ -99,6 +101,21 @@ namespace BlackMagic
                 screenPos, //Position
             new Rectangle(0, 0, 5000, 5000), //Source Rectangle
                 Color.White * (WeaponIndex == 1 ? 1 : 0.5f), // Color Tint
+                0, //Rotation Angle
+                new Vector2(.5f, 1), //Origin Of Sprite (where to rotate around)
+                scale * scaleMultiplier, //Scale
+                SpriteEffects.None, //Sprite Effects
+                0f); //Layer
+
+
+            scaleMultiplier = 1.5f;
+            offset = new Vector2(Width, Height * 2);
+            screenPos = new Vector2(50, 125 * 2);
+
+            Globals.spriteBatch.Draw(sodaIcon, //Texture
+                screenPos, //Position
+            new Rectangle(0, 0, 5000, 5000), //Source Rectangle
+                Color.White * (soda.canShoot ? 1 : 0.5f), // Color Tint
                 0, //Rotation Angle
                 new Vector2(.5f, 1), //Origin Of Sprite (where to rotate around)
                 scale * scaleMultiplier, //Scale

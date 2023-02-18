@@ -3,10 +3,14 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "map1.tmx",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Maps/base_tileset.tsx": {
+            "scaleInDock": 1
+        },
         "C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Maps/map1.tmx": {
             "scale": 0.38328683035714284,
             "selectedLayer": 3,
@@ -15,16 +19,24 @@
                 "y": -151.32270510300646
             }
         },
+        "C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Maps/possessables.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Maps/spawners.tsx": {
+            "scaleInDock": 1
+        },
         "map1.tmx": {
-            "scale": 3,
+            "scale": 1,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 73.83333333333333,
-                "y": 88.66666666666667
+                "x": 354.5,
+                "y": 170
             }
         },
         "tilemap_packed.tsx": {
-            "dynamicWrapping": false
+            "dynamicWrapping": false,
+            "scaleInDock": 1.5,
+            "scaleInEditor": 3
         }
     },
     "last.exportedFilePath": "C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Maps",
@@ -35,9 +47,15 @@
     "map.tileHeight": 16,
     "map.tileWidth": 16,
     "openFiles": [
+        "map1.tmx",
+        "tilemap_packed.tsx",
+        "C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Maps/map1.tmx"
     ],
     "project": "SweetLambOfMine.tiled-project",
     "recentFiles": [
+        "C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Maps/map1.tmx",
+        "tilemap_packed.tsx",
+        "map1.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

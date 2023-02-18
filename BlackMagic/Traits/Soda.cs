@@ -12,7 +12,10 @@ namespace BlackMagic
     internal class Soda : Trait, IWeapon
     {
         MouseState mouse;
-        bool canShoot = true;
+        public bool canShoot = true;
+
+        const float cooldownSet = 200;
+        float cooldown = 0;
 
         public Texture2D WeaponIconTexture => throw new NotImplementedException();
 
@@ -26,9 +29,11 @@ namespace BlackMagic
         {
             mouse = Mouse.GetState();
 
+
             if (canShoot && ClickHandler.leftClicked)
             {
                 parent.batch.Add(new SodaProjectile(parent.Pos, mouse.Position.ToVector2() + Globals.Camera.Pos));
+                cooldown = cooldownSet;
             }
         }
 
@@ -39,7 +44,11 @@ namespace BlackMagic
 
         public void PassiveUpdate(GameTime gt)
         {
-
+            cooldown--;
+            if (cooldown <= 0)
+                canShoot = true;
+            else
+                canShoot = false;
         }
 
     }

@@ -43,8 +43,8 @@ namespace BlackMagic
         }
         public void Move(GameTime gameTime, float angle, float determination = 1)
         {
-            parent.dy += MathF.Sin(angle) * speed * determination * (float)gameTime.ElapsedGameTime.TotalSeconds * 60;
-            parent.dx += MathF.Cos(angle) * speed * determination * (float)gameTime.ElapsedGameTime.TotalSeconds * 60;
+            parent.dy += MathF.Sin(angle) * speed * determination;
+            parent.dx += MathF.Cos(angle) * speed * determination;
         }
 
         public override void Update(GameTime gameTime)

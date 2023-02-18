@@ -91,10 +91,6 @@ namespace BlackMagic
         {
             if (isShooting && canShoot)
             {
-                for (int i = 0; i < rays.Count; i++)
-                    rays[i].drawRay(Globals.spriteBatch);
-
-
                 float scaleMultiplier = 2f;
                 //Vector2 offset = new Vector2(Width, 0);
                 Vector2 screenPos = parent.Pos + new Vector2(parent.Width / 2, 0) - Globals.Camera.Pos;// - offset;

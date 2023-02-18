@@ -88,11 +88,11 @@ namespace BlackMagic
                 new Vector2(.5f, 1), //Origin Of Sprite (where to rotate around)
                 scale * scaleMultiplier, //Scale
                 SpriteEffects.None, //Sprite Effects
-                0f); //Layer
+                .5f); //Layer
 
 
             //DrawUtils.fillRect(Globals.spriteBatch, (int)(X - Globals.Camera.X), (int)(Y - Globals.Camera.Y), (int)(Width), (int)(Height), Color.Crimson);
-            rb.DrawHitboxBorders();
+            //rb.DrawHitboxBorders();
         }
     }
 }

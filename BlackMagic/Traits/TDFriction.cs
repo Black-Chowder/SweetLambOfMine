@@ -39,8 +39,8 @@ namespace BlackMagic
             frictionForce.Y = parent.dy != 0 ? parent.dy - parent.dy / coefficient : 0;
 
             //Apply Friction Force
-            parent.dx -= frictionForce.X * (float)gameTime.ElapsedGameTime.TotalSeconds * 60;
-            parent.dy -= frictionForce.Y * (float)gameTime.ElapsedGameTime.TotalSeconds * 60;
+            parent.dx -= frictionForce.X;
+            parent.dy -= frictionForce.Y;
         }
     }
 }

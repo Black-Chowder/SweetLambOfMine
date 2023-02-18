@@ -64,7 +64,7 @@ namespace BlackMagic
 
         public void Draw()
         {
-            Globals.spriteBatch.Begin(SpriteSortMode.Immediate, samplerState: SamplerState.PointClamp);
+            Globals.spriteBatch.Begin(SpriteSortMode.FrontToBack, samplerState: SamplerState.PointClamp);
             for (int i = 0; i < entities.Count; i++)
                 entities[i].Draw();
             Globals.spriteBatch.End();

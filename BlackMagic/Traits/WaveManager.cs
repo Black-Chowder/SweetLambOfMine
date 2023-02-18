@@ -12,7 +12,7 @@ namespace BlackMagic
     {
         public List<Entity> enemies;
 
-        const int minSpawnDist = 1920;
+        const int minSpawnDist = 1000;
         const int maxSpawnDist = minSpawnDist * 2;
 
         public int waveNum = 1;
@@ -53,6 +53,7 @@ namespace BlackMagic
                     Vector2 spawnPos = new Vector2(
                         MathF.Cos(angle) * dist,
                         MathF.Sin(angle) * dist);
+                    spawnPos += parent.Pos;
 
                     BasicDemon basic = new BasicDemon(spawnPos);
                     enemies.Add(basic);

@@ -129,3 +129,5 @@ C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-wind
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\sheep2.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\demon_L.2.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\demon_R2.xnb
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\sheep_flame.xnb
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\sheep_gum.xnb

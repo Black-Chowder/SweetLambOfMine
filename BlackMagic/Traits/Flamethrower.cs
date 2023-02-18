@@ -18,8 +18,10 @@ namespace BlackMagic
         const int nRays = 3;
 
         bool isShooting = false;
+        bool canShoot = true;
 
-        Ray ray;
+        public const float maxAmmo = 100;
+        public float ammo = maxAmmo;
 
         List<Ray> rays;
 
@@ -41,10 +43,13 @@ namespace BlackMagic
             mouse = Mouse.GetState();
 
 
-            isShooting = mouse.LeftButton == ButtonState.Pressed;
-
-            if (isShooting)
+            isShooting = mouse.LeftButton == ButtonState.Pressed && ammo > 0;
+            //Debug.WriteLine("ammo = " + ammo);
+            if (ammo <= 0)
+                canShoot = false;
+            if (isShooting && canShoot)
             {
+                ammo--;
                 shootLogic();
             }
         }
@@ -58,7 +63,7 @@ namespace BlackMagic
             {
 
                 float angle = aimAngle + i * spread / nRays - (nRays / 2) * spread / nRays;
-                rays[i] = new Ray(parent.X, parent.Y, angle);
+                rays[i] = new Ray(parent.X + parent.Width / 2, parent.Y, angle);
 
                 Vector2? hitPoint = rays[i].cast(parent, range);
                 Entity hitEntity = rays[i].getEntity();
@@ -66,7 +71,7 @@ namespace BlackMagic
                     continue;
                 
                 BasicDemon demon = (BasicDemon)hitEntity;
-                demon.health.health -= 1;
+                demon.health.health -= 3;
             }
         }
 
@@ -81,7 +86,15 @@ namespace BlackMagic
 
         public void PassiveUpdate(GameTime gt)
         {
-            throw new NotImplementedException();
+            if (!isShooting)
+            {
+                ammo += .5f;
+                if (ammo > maxAmmo)
+                {
+                    canShoot = true;
+                    ammo = maxAmmo;
+                }
+            }
         }
     }
 }

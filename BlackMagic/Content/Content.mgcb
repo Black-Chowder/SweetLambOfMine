@@ -37,6 +37,30 @@
 /processorParam:TextureFormat=Color
 /build:../Graphics/demon_R2.png;demon_R2.png
 
+#begin ../Graphics/sheep_flame.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../Graphics/sheep_flame.png;sheep_flame.png
+
+#begin ../Graphics/sheep_gum.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../Graphics/sheep_gum.png;sheep_gum.png
+
 #begin ../Graphics/sheep.png
 /importer:TextureImporter
 /processor:TextureProcessor

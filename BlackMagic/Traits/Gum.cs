@@ -23,7 +23,7 @@ namespace BlackMagic
         {
             Entity parentEntity;
             Gum parentTrait;
-            const float speed = 2;
+            const float speed = 20;
 
             Vector2 originalPos;
 
@@ -106,34 +106,10 @@ namespace BlackMagic
         {
             mouse = Mouse.GetState();
 
-            if (projectile != null)
-                projectile.Update(gameTime);
-
             if (attached[0] != null && attached[1] != null)
             {
                 pairings.AddLast(attached);
                 attached = new Entity[2];
-            }
-
-            for (LinkedListNode<Entity[]> node = pairings.First; node != null; node = node.Next)
-            {
-                if (!node.Value[0].exists || !node.Value[1].exists)
-                {
-                    pairings.Remove(node);
-                    continue;
-                }
-
-                Entity e1 = node.Value[0];
-                Entity e2 = node.Value[1];
-
-                float dist = DistanceUtils.getDistance(e1.Pos, e2.Pos);
-                if (dist <= e1.Width * 2f)
-                    continue;
-                float angle = MathF.Atan2(e1.Y - e2.Y, e1.X - e2.X);
-
-                //WARNING: This code REALLY doesn't seem like it should work but it does for some reason and I don't want to mess with it anymore
-                e1.DeltaPos += new Vector2(-MathF.Cos(-angle), MathF.Sin(-angle));
-                e2.DeltaPos += new Vector2(MathF.Cos(angle), MathF.Sin(angle));
             }
 
             if (ClickHandler.leftClicked && projectile == null)
@@ -159,7 +135,30 @@ namespace BlackMagic
 
         public void PassiveUpdate(GameTime gt)
         {
-            throw new NotImplementedException();
+
+            if (projectile != null)
+                projectile.Update(gt);
+
+            for (LinkedListNode<Entity[]> node = pairings.First; node != null; node = node.Next)
+            {
+                if (!node.Value[0].exists || !node.Value[1].exists)
+                {
+                    pairings.Remove(node);
+                    continue;
+                }
+
+                Entity e1 = node.Value[0];
+                Entity e2 = node.Value[1];
+
+                float dist = DistanceUtils.getDistance(e1.Pos, e2.Pos);
+                if (dist <= e1.Width * 2f)
+                    continue;
+                float angle = MathF.Atan2(e1.Y - e2.Y, e1.X - e2.X);
+
+                //WARNING: This code REALLY doesn't seem like it should work but it does for some reason and I don't want to mess with it anymore
+                e1.DeltaPos += new Vector2(-MathF.Cos(-angle), MathF.Sin(-angle));
+                e2.DeltaPos += new Vector2(MathF.Cos(angle), MathF.Sin(angle));
+            }
         }
     }
 }

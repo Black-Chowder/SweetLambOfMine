@@ -18,13 +18,13 @@ namespace BlackMagic
             IsFixedTimeStep = false;
             IsMouseVisible = true;
 
-            //grpahics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             //graphics.PreferredBackBufferWidth = 1920;
             //graphics.PreferredBackBufferHeight = 1080;
-            graphics.ApplyChanges();
+            //graphics.ApplyChanges();
 
             Globals.Camera = new Camera();
-            Globals.Camera.SetDimensions(graphics, 1280, 720, false);
+            Globals.Camera.SetDimensions(graphics, 1920, 1080, false);
 
             //Add Penumbra Component
             //penumbra = new PenumbraComponent(this);

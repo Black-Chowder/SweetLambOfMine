@@ -30,7 +30,8 @@ namespace BlackMagic
         const string classId = "BasicDemon";
         public BasicDemon(Vector2 pos) : base(pos, classId)
         {
-            Width = Height = 50;
+            Width = 50;
+            Height = 100;
 
             float size = 1448;
             scale = Width / size;
@@ -76,7 +77,7 @@ namespace BlackMagic
             base.Draw();
 
             float scaleMultiplier = 3f;
-            Vector2 offset = new Vector2(Width, Height * 2);
+            Vector2 offset = new Vector2(Width, 0);
             Vector2 screenPos = Pos - Globals.Camera.Pos - offset;
 
             Globals.spriteBatch.Draw(texture1, //Texture

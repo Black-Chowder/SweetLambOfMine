@@ -12,12 +12,17 @@ namespace BlackMagic
     {
         public List<Entity> entities { get; private set; }
 
+        public Lamb player;
+
         public EntityBatch()
         {
             entities = new List<Entity>();
 
+            Globals.MainEntityBatch = this;
+
             //Add(new AnimatedEntity(200, 200));
-            Add(new Lamb(new Vector2(100, 100)));
+            player = new Lamb(new Vector2(100, 100));
+            Add(player);
             Add(new BasicDemon(new Vector2(200, 200)));
             Add(new BasicDemon(new Vector2(100, 300)));
 

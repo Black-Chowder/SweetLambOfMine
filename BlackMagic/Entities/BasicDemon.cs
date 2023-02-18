@@ -13,6 +13,7 @@ namespace BlackMagic
         TDMovement movement;
         TDFriction friction;
 
+        BasicDemonAI ai;
 
         const string classId = "BasicDemon";
         public BasicDemon(Vector2 pos) : base(pos, classId)
@@ -29,8 +30,16 @@ namespace BlackMagic
             AddTrait(rb);
 
             //Movement
-            movement = new TDMovement(this);
+            movement = new TDMovement(this, 3);
             AddTrait(movement);
+
+            //Friction
+            friction = new TDFriction(this);
+            AddTrait(friction);
+
+            //AI
+            ai = new BasicDemonAI(this, movement);
+            AddTrait(ai);
         }
 
         public override void Draw()

@@ -34,10 +34,12 @@ namespace BlackMagic
         {
             entities = new List<Entity>();
 
+            Globals.MainEntityBatch = this;
+
             MapLoader mapLoader = new MapLoader(this);
             mapLoader.Load(byteMap);
 
-            Add(new ExamplePlayer());
+            //Add(new ExamplePlayer());
             //Add(new ExamplePlatform(100, 300, 500, 100));
             //Add(new ExampleBlock(200, 200));
         }

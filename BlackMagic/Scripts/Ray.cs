@@ -105,10 +105,10 @@ namespace BlackMagic
         public void drawRay(SpriteBatch spriteBatch)
         {
             Vector2 line = new Vector2((float)(10000*Math.Cos(angle)), (float)(10000*Math.Sin(angle)));
-            DrawUtils.DrawLine(spriteBatch, pos, new Vector2(pos.X + line.X, pos.Y + line.Y), Color.White);
+            DrawUtils.DrawLine(spriteBatch, pos - Globals.Camera.Pos, new Vector2(pos.X + line.X, pos.Y + line.Y) - Globals.Camera.Pos, Color.White);
             if (tip != null)
             {
-                DrawUtils.DrawLine(spriteBatch, pos, tip.Value, Color.White);
+                DrawUtils.DrawLine(spriteBatch, pos - Globals.Camera.Pos, tip.Value - Globals.Camera.Pos, Color.White);
             }
         }
 

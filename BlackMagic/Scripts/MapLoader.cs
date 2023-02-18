@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace BlackMagic
 {
@@ -51,6 +52,50 @@ namespace BlackMagic
                                 2f);
 
                             parentBatch.Add(wall);
+                        }
+
+                        break;
+
+                    case "PlayerSpawner":
+                        foreach (ChunkData chunk in layer.chunks)
+                        {
+                            for (int r = 0; r < chunk.height; r++)
+                            {
+                                for (int c = 0; c < chunk.width; c++)
+                                {
+                                    int chunkData = (int)chunk.data[c + r * chunk.width];
+                                    if (chunkData == 0)
+                                        continue;
+
+                                    Lamb lamb = new Lamb(new Vector2(
+                                        (c + chunk.x) * 16 * 2f,
+                                        (r + chunk.y) * 16 * 2f));
+                                    parentBatch.Add(lamb);
+                                    parentBatch.player = lamb;
+                                }
+                            }
+                        }
+
+                        break;
+
+                    case "EnemySpawner":
+                        foreach (ChunkData chunk in layer.chunks)
+                        {
+                            for (int r = 0; r < chunk.height; r++)
+                            {
+                                for (int c = 0; c < chunk.width; c++)
+                                {
+                                    int chunkData = (int)chunk.data[c + r * chunk.width];
+                                    if (chunkData == 0)
+                                        continue;
+
+                                    BasicDemon demon = new BasicDemon(new Vector2(
+                                        (c + chunk.x) * 16 * 2f,
+                                        (r + chunk.y) * 16 * 2f));
+                                    parentBatch.Add(demon);
+
+                                }
+                            }
                         }
 
                         break;

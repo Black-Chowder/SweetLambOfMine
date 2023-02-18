@@ -63,49 +63,9 @@ namespace BlackMagic.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Astrid {
-            get {
-                object obj = ResourceManager.GetObject("Astrid", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
         internal static byte[] map1 {
             get {
                 object obj = ResourceManager.GetObject("map1", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] map2 {
-            get {
-                object obj = ResourceManager.GetObject("map2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] map3 {
-            get {
-                object obj = ResourceManager.GetObject("map3", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] test {
-            get {
-                object obj = ResourceManager.GetObject("test", resourceCulture);
                 return ((byte[])(obj));
             }
         }

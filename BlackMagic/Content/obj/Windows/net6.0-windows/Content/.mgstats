@@ -1,4 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/../Graphics/Astrid.png","C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/bin/Windows/Content/Astrid.xnb","TextureProcessor","Texture2DContent",6056,267765,0.2623528
-"C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/../Graphics/tileset.png","C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/bin/Windows/Content/tileset.xnb","TextureProcessor","Texture2DContent",1836,114773,0.0117796
+"C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/../Graphics/tilemap_packed.png","C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/bin/Windows/Content/tilemap_packed.xnb","TextureProcessor","Texture2DContent",5294,135253,0.173977
 "C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/DefaultFont.spritefont","C:/Users/iabla/Documents/GitHub/SweetLambOfMine/BlackMagic/Content/bin/Windows/Content/DefaultFont.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2487143

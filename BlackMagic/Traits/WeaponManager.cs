@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Input;
 
 namespace BlackMagic
 {
@@ -28,6 +29,15 @@ namespace BlackMagic
         public override void Update(GameTime gameTime)
         {
             Weapons[WeaponIndex].Update(gameTime);
+
+            if (ClickHandler.IsClicked(Keys.D1))
+            {
+                WeaponIndex = 0;
+            }
+            else if (ClickHandler.IsClicked(Keys.D2))
+            {
+                WeaponIndex = 1;
+            }
         }
 
         public void Draw()

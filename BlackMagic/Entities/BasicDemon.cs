@@ -15,6 +15,10 @@ namespace BlackMagic
 
         BasicDemonAI ai;
 
+        public Health health;
+
+        public int stuckNum = 0;
+
         const string classId = "BasicDemon";
         public BasicDemon(Vector2 pos) : base(pos, classId)
         {
@@ -40,12 +44,22 @@ namespace BlackMagic
             //AI
             ai = new BasicDemonAI(this, movement);
             AddTrait(ai);
+
+            //Health
+            health = new Health(this);
+            AddTrait(health);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            friction.coefficient = 2f + .5f * stuckNum;
+            base.Update(gameTime);
         }
 
         public override void Draw()
         {
             base.Draw(); 
-            DrawUtils.fillRect(Globals.spriteBatch, (int)(X), (int)(Y), (int)(Width), (int)(Height), Color.Crimson);
+            DrawUtils.fillRect(Globals.spriteBatch, (int)(X - Globals.Camera.X), (int)(Y - Globals.Camera.Y), (int)(Width), (int)(Height), Color.Crimson);
             rb.DrawHitboxBorders();
         }
     }

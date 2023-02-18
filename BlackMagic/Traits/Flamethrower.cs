@@ -65,7 +65,8 @@ namespace BlackMagic
                 if (hitEntity == null || !hitPoint.HasValue || hitEntity is not BasicDemon)
                     continue;
                 
-
+                BasicDemon demon = (BasicDemon)hitEntity;
+                demon.health.health -= 1;
             }
         }
 

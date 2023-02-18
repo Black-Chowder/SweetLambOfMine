@@ -33,8 +33,8 @@ namespace BlackMagic
             Height = tileSize * tileScale * map.GetLength(1);
 
             //TODO: Make this a public static method to set
-            tilemap ??= Globals.content.Load<Texture2D>("tileset");
-            Rectangle tileRectSpecs = new Rectangle(16, 16, 8, 14);
+            tilemap ??= Globals.content.Load<Texture2D>("tilemap_packed");
+            Rectangle tileRectSpecs = new Rectangle(16, 16, 12, 11);
             tileDrawer = new TileDrawer(this, tilemap, tileRectSpecs, map, tileSize, tileScale);
             AddTrait(tileDrawer);
 

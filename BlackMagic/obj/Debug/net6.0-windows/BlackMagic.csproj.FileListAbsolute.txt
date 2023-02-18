@@ -83,9 +83,7 @@ D:\Programming\C#\BlackMagic\BlackMagic\obj\Debug\net6.0-windows\BlackMagic.cspr
 D:\Programming\C#\BlackMagic\BlackMagic\bin\Debug\net6.0-windows\Content\DefaultFont.xnb
 C:\Users\iabla\Documents\GitHub\BlackMagic\BlackMagic\bin\Debug\net6.0-windows\Content\DefaultFont.xnb
 C:\Users\iabla\Documents\GitHub\BlackMagic\BlackMagic\bin\Debug\net6.0-windows\Content\Astrid.xnb
-C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\Astrid.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\DefaultFont.xnb
-C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\tileset.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\BlackMagic.exe
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\BlackMagic.deps.json
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\BlackMagic.runtimeconfig.json
@@ -126,3 +124,4 @@ C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\obj\Debug\net6.0-wind
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\obj\Debug\net6.0-windows\BlackMagic.pdb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\obj\Debug\net6.0-windows\BlackMagic.genruntimeconfig.cache
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\obj\Debug\net6.0-windows\ref\BlackMagic.dll
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\tilemap_packed.xnb

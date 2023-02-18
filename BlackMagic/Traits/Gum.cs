@@ -23,7 +23,7 @@ namespace BlackMagic
         {
             Entity parentEntity;
             Gum parentTrait;
-            const float speed = 20;
+            const float speed = 2;
 
             Vector2 originalPos;
 
@@ -44,7 +44,7 @@ namespace BlackMagic
             {
                 foreach (Entity entity in parentEntity.batch.entities)
                 {
-                    if (entity == parentEntity)
+                    if (entity == parentEntity || entity is Wall)
                         continue;
 
                     Rectangle selfRect = new Rectangle(Pos.ToPoint(), new Point((int)Width, (int)Height));
@@ -55,10 +55,18 @@ namespace BlackMagic
                         if (parentTrait.attached[0] == null)
                         {
                             parentTrait.attached[0] = entity;
+                            if (entity is BasicDemon)
+                            {
+                                ((BasicDemon)entity).stuckNum++;
+                            }
                         }
                         else if (parentTrait.attached[0] != entity)
                         {
                             parentTrait.attached[1] = entity;
+                            if (entity is BasicDemon)
+                            {
+                                ((BasicDemon)entity).stuckNum++;
+                            }
                         }
 
                         parentTrait.projectile = null;
@@ -73,7 +81,7 @@ namespace BlackMagic
 
             public override void Draw()
             {
-                DrawUtils.fillRect(Globals.spriteBatch, (int)(X), (int)(Y), (int)(Width), (int)(Height), Color.Pink);
+                DrawUtils.fillRect(Globals.spriteBatch, (int)(X - Globals.Camera.X), (int)(Y - Globals.Camera.Y), (int)(Width), (int)(Height), Color.Pink);
 
                 base.Draw();
             }
@@ -145,7 +153,7 @@ namespace BlackMagic
                 Entity e1 = pairing[0];
                 Entity e2 = pairing[1];
 
-                DrawUtils.DrawLine(Globals.spriteBatch, e1.Pos, e2.Pos, Color.Pink, 5);
+                DrawUtils.DrawLine(Globals.spriteBatch, e1.Pos - Globals.Camera.Pos, e2.Pos - Globals.Camera.Pos, Color.Pink, 5);
             }
         }
 

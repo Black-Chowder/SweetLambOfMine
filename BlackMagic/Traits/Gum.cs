@@ -16,12 +16,16 @@ namespace BlackMagic
 
         LinkedList<Entity[]> pairings = new LinkedList<Entity[]>();
 
+        const float range = 1000f;
+
         Projectile projectile;
         class Projectile : Entity
         {
             Entity parentEntity;
             Gum parentTrait;
-            const float speed = 2;
+            const float speed = 20;
+
+            Vector2 originalPos;
 
             const string classId = "GumProjectile";
             public Projectile(Entity parentEntity, Gum parentTrait, Vector2 pos, float angle) : base(pos, classId)
@@ -29,6 +33,8 @@ namespace BlackMagic
                 this.parentEntity = parentEntity;
                 this.parentTrait = parentTrait;
                 Width = Height = 15;
+
+                originalPos = pos;
 
                 dx = MathF.Cos(angle) * speed;
                 dy = MathF.Sin(angle) * speed;
@@ -54,8 +60,13 @@ namespace BlackMagic
                         {
                             parentTrait.attached[1] = entity;
                         }
+
+                        parentTrait.projectile = null;
                     }
                 }
+
+                if (DistanceUtils.getDistance(originalPos, Pos) > range)
+                    parentTrait.projectile = null;
 
                 base.Update(gameTime);
             }
@@ -105,11 +116,11 @@ namespace BlackMagic
                 float angle = MathF.Atan2(e1.Y - e2.Y, e1.X - e2.X);
 
                 //WARNING: This code REALLY doesn't seem like it should work but it does for some reason and I don't want to mess with it anymore
-                e1.DeltaPos = new Vector2(-MathF.Cos(-angle), MathF.Sin(-angle));
-                e2.DeltaPos = new Vector2(MathF.Cos(angle), MathF.Sin(angle));
+                e1.DeltaPos += new Vector2(-MathF.Cos(-angle), MathF.Sin(-angle));
+                e2.DeltaPos += new Vector2(MathF.Cos(angle), MathF.Sin(angle));
             }
 
-            if (ClickHandler.leftClicked)
+            if (ClickHandler.leftClicked && projectile == null)
             {
                 float angle = MathF.PI + MathF.Atan2(parent.Y - Globals.Camera.Y - mouse.Y, parent.X - Globals.Camera.X - mouse.X);
                 projectile = new Projectile(parent, this, parent.Pos, angle);

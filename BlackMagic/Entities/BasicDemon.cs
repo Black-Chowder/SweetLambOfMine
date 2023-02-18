@@ -35,8 +35,8 @@ namespace BlackMagic
 
         public override void Draw()
         {
-            base.Draw();
-
+            base.Draw(); 
+            DrawUtils.fillRect(Globals.spriteBatch, (int)(X), (int)(Y), (int)(Width), (int)(Height), Color.Crimson);
             rb.DrawHitboxBorders();
         }
     }

@@ -16,10 +16,8 @@ namespace BlackMagic
         {
             entities = new List<Entity>();
 
-            Add(new AnimatedEntity(200, 200));
-            //Add(new ExamplePlayer());
-            //Add(new ExampleBlock(100, 100));
-            //Add(new ExamplePlatform(300, 300, 100, 100));
+            //Add(new AnimatedEntity(200, 200));
+            Add(new Lamb(new Vector2(100, 100)));
         }
 
         public EntityBatch(byte[] byteMap)

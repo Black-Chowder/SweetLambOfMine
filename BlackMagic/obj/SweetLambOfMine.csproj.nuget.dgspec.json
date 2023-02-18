@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj": {}
+    "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\SweetLambOfMine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj": {
+    "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\SweetLambOfMine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj",
-        "projectName": "BlackMagic",
-        "projectPath": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj",
+        "projectUniqueName": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\SweetLambOfMine.csproj",
+        "projectName": "SweetLambOfMine",
+        "projectPath": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\SweetLambOfMine.csproj",
         "packagesPath": "C:\\Users\\iabla\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\obj\\",
         "projectStyle": "PackageReference",

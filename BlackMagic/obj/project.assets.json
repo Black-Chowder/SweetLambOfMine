@@ -7573,11 +7573,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\iabla\\Documents\\GitHub\\BlackMagic\\BlackMagic\\BlackMagic.csproj",
+      "projectUniqueName": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj",
       "projectName": "BlackMagic",
-      "projectPath": "C:\\Users\\iabla\\Documents\\GitHub\\BlackMagic\\BlackMagic\\BlackMagic.csproj",
+      "projectPath": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj",
       "packagesPath": "C:\\Users\\iabla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\iabla\\Documents\\GitHub\\BlackMagic\\BlackMagic\\obj\\",
+      "outputPath": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -58,7 +58,7 @@ namespace BlackMagic
             switch (Globals.GameState)
             {
                 case "Start":
-                    Globals.MainEntityBatch = new EntityBatch(Resources.map3);
+                    Globals.MainEntityBatch = new EntityBatch();
 
                     Globals.GameState = "MainLoop";
                     break;

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lwGnEUD32KyhAHAEkHUOelaQxz+tj1RL486wjpw5C1y9B63GHOCIV+tHKolq3fC330y5+2xCO5nEyI1WyRdpzg==",
+  "dgSpecHash": "MUnKS+nhCGdzKIVWCcDBCqNGjLm3Theea5CHL+evTnFwrZNMHqWYfyadDz2EmO2cx70QjiUeOt7y+WSnajZ25Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\iabla\\Documents\\GitHub\\BlackMagic\\BlackMagic\\BlackMagic.csproj",
+  "projectFilePath": "C:\\Users\\iabla\\Documents\\GitHub\\SweetLambOfMine\\BlackMagic\\BlackMagic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iabla\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\iabla\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

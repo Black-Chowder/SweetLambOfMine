@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Content/../Graphics/Astrid.png","C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Content/bin/Windows/Astrid.xnb","TextureProcessor","Texture2DContent",6056,267765,0.3407884
+"C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Content/../Graphics/tileset.png","C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Content/bin/Windows/tileset.xnb","TextureProcessor","Texture2DContent",1836,114773,0.0112678
+"C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Content/DefaultFont.spritefont","C:/Users/iabla/Documents/GitHub/BlackMagic/BlackMagic/Content/bin/Windows/DefaultFont.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2762445

@@ -14,15 +14,24 @@ namespace BlackMagic
     {
         const float range = 150f;
 
+        const float spread = MathF.PI / 6;
+        const int nRays = 3;
+
         bool isShooting = false;
 
         Ray ray;
+
+        List<Ray> rays;
 
         MouseState mouse;
 
         public Flamethrower(Entity parent, byte priority = 100) : base(parent, priority)
         {
-
+            rays = new List<Ray>();
+            for (int i = 0; i < nRays; i++)
+            {
+                rays.Add(new Ray(0, 0, 0));
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -41,21 +50,29 @@ namespace BlackMagic
 
         private void shootLogic()
         {
-            float angle = MathF.PI + MathF.Atan2(parent.Y - Globals.Camera.Y - mouse.Y, parent.X - Globals.Camera.X - mouse.X);
+            float aimAngle = MathF.PI + MathF.Atan2(parent.Y - Globals.Camera.Y - mouse.Y, parent.X - Globals.Camera.X - mouse.X);
 
-            ray = new Ray(parent.X, parent.Y, angle);
-            Vector2? hitPoint = ray.cast(parent, range);
-            Entity hitEntity = ray.getEntity();
-            if (hitEntity == null || !hitPoint.HasValue)
-                return;
-            
+            for (int i = 0; i < rays.Count; i++)
+            {
+
+                float angle = aimAngle + i * spread / nRays - (nRays / 2) * spread / nRays;
+                rays[i] = new Ray(parent.X, parent.Y, angle);
+
+                Vector2? hitPoint = rays[i].cast(parent, range);
+                Entity hitEntity = rays[i].getEntity();
+                if (hitEntity == null || !hitPoint.HasValue || hitEntity is not BasicDemon)
+                    continue;
+                
+
+            }
         }
 
         public void Draw()
         {
             if (isShooting)
             {
-                ray.drawRay(Globals.spriteBatch);
+                for (int i = 0; i < rays.Count; i++)
+                    rays[i].drawRay(Globals.spriteBatch);
             }
         }
     }

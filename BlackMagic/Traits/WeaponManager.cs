@@ -15,6 +15,7 @@ namespace BlackMagic
     {
         public Flamethrower flamethrower;
         public Gum gum;
+        public Soda soda;
 
         public List<IWeapon> Weapons = new List<IWeapon>();
         public int WeaponIndex = 1;
@@ -34,6 +35,9 @@ namespace BlackMagic
 
             gum = new Gum(parent);
             Weapons.Add(gum);
+
+            soda = new Soda(parent);
+            Weapons.Add(soda);
 
             float size = 1448;
             scale = Width / size;
@@ -58,6 +62,10 @@ namespace BlackMagic
             else if (ClickHandler.IsClicked(Keys.D2))
             {
                 WeaponIndex = 1;
+            }
+            else if (ClickHandler.IsClicked(Keys.D3))
+            {
+                WeaponIndex = 2;
             }
         }
 

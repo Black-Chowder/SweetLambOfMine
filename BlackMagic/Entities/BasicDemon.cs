@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace BlackMagic
 {
-    public class Lamb : Entity
+    internal class BasicDemon : Entity
     {
         Rigidbody rb;
         TDMovement movement;
         TDFriction friction;
 
-        Flamethrower flamethrower;
 
-        const string classId = "Lamb";
-        public Lamb(Vector2 pos) : base(pos, classId)
+        const string classId = "BasicDemon";
+        public BasicDemon(Vector2 pos) : base(pos, classId)
         {
             Width = Height = 50;
 
@@ -30,24 +29,15 @@ namespace BlackMagic
             AddTrait(rb);
 
             //Movement
-            movement = new TDMovement(this, directControl: true);
+            movement = new TDMovement(this);
             AddTrait(movement);
-
-            //Friction
-            friction = new TDFriction(this);
-            AddTrait(friction);
-
-            //Flamethrower
-            flamethrower = new Flamethrower(this);
-            AddTrait(flamethrower);
         }
 
         public override void Draw()
         {
             base.Draw();
-            DrawUtils.fillRect(Globals.spriteBatch, (int)(X), (int)(Y), (int)(Width), (int)(Height), Color.Black);
-            rb.DrawHitboxBorders();
 
+            rb.DrawHitboxBorders();
         }
     }
 }

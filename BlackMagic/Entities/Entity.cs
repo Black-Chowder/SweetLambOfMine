@@ -18,6 +18,7 @@ namespace BlackMagic
 
             //Add(new AnimatedEntity(200, 200));
             Add(new Lamb(new Vector2(100, 100)));
+            Add(new BasicDemon(new Vector2(200, 200)));
         }
 
         public EntityBatch(byte[] byteMap)

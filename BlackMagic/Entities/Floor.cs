@@ -17,7 +17,7 @@ namespace BlackMagic
         public Floor(int[,] map, float x, float y, int tileSize, float tileScale) : base(new Vector2(x, y), classId)
         {
             Texture2D tilemap = Globals.content.Load<Texture2D>("tileset");
-            Rectangle tileRectSpecs = new Rectangle(16, 16, 8, 14);
+            Rectangle tileRectSpecs = new Rectangle(16, 16, 12, 11);
             tileDrawer = new TileDrawer(this, tilemap, tileRectSpecs, map, tileSize, tileScale);
             AddTrait(tileDrawer);
         }

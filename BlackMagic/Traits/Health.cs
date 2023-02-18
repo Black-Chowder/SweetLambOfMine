@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BlackMagic
 {
-    internal class Health : Trait
+    public class Health : Trait
     {
         public int health = 100;
 

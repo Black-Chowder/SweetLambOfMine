@@ -15,7 +15,7 @@ namespace BlackMagic
 
         WeaponManager weaponManager;
 
-        Health health;
+        public Health health;
 
         const string classId = "Lamb";
         public Lamb(Vector2 pos) : base(pos, classId)

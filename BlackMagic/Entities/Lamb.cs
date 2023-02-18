@@ -18,6 +18,7 @@ namespace BlackMagic
         TDFriction friction;
 
         WeaponManager weaponManager;
+        WaveManager waveManager;
 
         public Health health;
 
@@ -59,6 +60,10 @@ namespace BlackMagic
             //Health
             health = new Health(this);
             AddTrait(health);
+
+            //Wave Manager
+            waveManager = new WaveManager(this);
+            AddTrait(waveManager);
         }
 
         public override void Update(GameTime gameTime)

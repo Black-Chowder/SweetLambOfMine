@@ -58,7 +58,7 @@ namespace BlackMagic
             switch (Globals.GameState)
             {
                 case "Start":
-                    Globals.MainEntityBatch = new EntityBatch(Resources.map1);
+                    Globals.MainEntityBatch = new EntityBatch();
 
                     Globals.GameState = "MainLoop";
                     break;
@@ -74,7 +74,7 @@ namespace BlackMagic
         protected override void Draw(GameTime gameTime)
         {
             //penumbra.BeginDraw();
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Purple);
 
             switch (Globals.GameState)
             {

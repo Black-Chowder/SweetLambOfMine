@@ -1,12 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.Direct2D1.Effects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.Design;
 
 namespace BlackMagic
 {
@@ -23,9 +25,14 @@ namespace BlackMagic
         public const float maxAmmo = 100;
         public float ammo = maxAmmo;
 
+        float aimAngle = 0;
+        float scale;
+
         List<Ray> rays;
 
         MouseState mouse;
+
+        Texture2D texture;
 
         public Texture2D WeaponIconTexture => throw new NotImplementedException();
 
@@ -36,6 +43,11 @@ namespace BlackMagic
             {
                 rays.Add(new Ray(0, 0, 0));
             }
+
+            texture ??= Globals.content.Load<Texture2D>("sheep_fire");
+
+            float size = 1448;
+            scale = 150 / size;
         }
 
         public override void Update(GameTime gameTime)
@@ -57,7 +69,7 @@ namespace BlackMagic
 
         private void shootLogic()
         {
-            float aimAngle = MathF.PI + MathF.Atan2(parent.Y - Globals.Camera.Y - mouse.Y, parent.X - Globals.Camera.X - mouse.X);
+            aimAngle = MathF.PI + MathF.Atan2(parent.Y - Globals.Camera.Y - mouse.Y, parent.X - Globals.Camera.X - mouse.X);
 
             for (int i = 0; i < rays.Count; i++)
             {
@@ -77,10 +89,25 @@ namespace BlackMagic
 
         public void Draw()
         {
-            if (isShooting)
+            if (isShooting && canShoot)
             {
                 for (int i = 0; i < rays.Count; i++)
                     rays[i].drawRay(Globals.spriteBatch);
+
+
+                float scaleMultiplier = 2f;
+                //Vector2 offset = new Vector2(Width, 0);
+                Vector2 screenPos = parent.Pos + new Vector2(parent.Width / 2, 0) - Globals.Camera.Pos;// - offset;
+
+                Globals.spriteBatch.Draw(texture, //Texture
+                    screenPos, //Position
+                new Rectangle(0, 0, 5000, 5000), //Source Rectangle
+                    Color.White, // Color Tint
+                    aimAngle - MathF.PI / 3.5f, //Rotation Angle
+                    new Vector2(0, .5f), //Origin Of Sprite (where to rotate around)
+                    scale * scaleMultiplier, //Scale
+                    SpriteEffects.None, //Sprite Effects
+                    0f); //Layer
             }
         }
 

@@ -133,3 +133,6 @@ C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-wind
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\sheep_gum.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\sheep_fire.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\sheep_soda.xnb
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\title.xnb
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\tutorial.xnb
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\generatedtext_2.xnb

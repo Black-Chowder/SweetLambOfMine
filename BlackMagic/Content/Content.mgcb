@@ -37,6 +37,18 @@
 /processorParam:TextureFormat=Color
 /build:../Graphics/demon_R2.png;demon_R2.png
 
+#begin ../Graphics/generatedtext_2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../Graphics/generatedtext_2.png;generatedtext_2.png
+
 #begin ../Graphics/sheep_fire.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -120,6 +132,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:../Graphics/tilemap_packed.png;tilemap_packed.png
+
+#begin ../Graphics/title.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../Graphics/title.png;title.png
+
+#begin ../Graphics/tutorial.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../Graphics/tutorial.png;tutorial.png
 
 #begin DefaultFont.spritefont
 /importer:FontDescriptionImporter

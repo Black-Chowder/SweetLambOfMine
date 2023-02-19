@@ -2,6 +2,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.Direct2D1.Effects;
+using SharpDX.Direct3D9;
 using System.Diagnostics;
 
 namespace BlackMagic
@@ -9,6 +11,10 @@ namespace BlackMagic
     public class Game1 : Game
     {
         public static GraphicsDeviceManager graphics;
+
+        Texture2D title;
+        Texture2D tutorial;
+        Texture2D start;
 
         public Game1()
         {
@@ -34,7 +40,7 @@ namespace BlackMagic
 
         protected override void Initialize()
         {
-            Globals.GameState = "Start";
+            Globals.GameState = "Title";
 
             base.Initialize();
         }
@@ -44,6 +50,11 @@ namespace BlackMagic
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
             Globals.content = Content;
             Globals.defaultFont = Content.Load<SpriteFont>("DefaultFont");
+
+            title = Globals.content.Load<Texture2D>("title");
+            tutorial = Globals.content.Load<Texture2D>("tutorial");
+            start = Globals.content.Load<Texture2D>("generatedtext_2");
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -57,6 +68,20 @@ namespace BlackMagic
 
             switch (Globals.GameState)
             {
+                case "Title":
+                    if (ClickHandler.IsClicked(Keys.Space))
+                    {
+                        Globals.GameState = "Instructions";
+                    }
+                    break;
+
+                case "Instructions":
+                    if (ClickHandler.IsClicked(Keys.Space))
+                    {
+                        Globals.GameState = "Start";
+                    }
+                    break;
+
                 case "Start":
                     Globals.MainEntityBatch = new EntityBatch();
 
@@ -78,6 +103,44 @@ namespace BlackMagic
 
             switch (Globals.GameState)
             {
+                case "Title":
+                    Globals.spriteBatch.Begin();
+
+                    Globals.spriteBatch.Draw(title, //Texture
+                        new Vector2(0, 0), //Position
+                    new Rectangle(0, 0, 1920, 1080), //Source Rectangle
+                        Color.White, // Color Tint
+                        0, //Rotation Angle
+                        new Vector2(.5f, 1), //Origin Of Sprite (where to rotate around)
+                        1, //Scale
+                        SpriteEffects.None, //Sprite Effects
+                        0f); //Layer
+
+                    Globals.spriteBatch.Draw(start, //Texture
+                        new Vector2(Globals.Camera.Width / 2 - 296 / 2, 300), //Position
+                    new Rectangle(0, 0, 1920, 1080), //Source Rectangle
+                        Color.White, // Color Tint
+                        0, //Rotation Angle
+                        new Vector2(.5f, 1), //Origin Of Sprite (where to rotate around)
+                        1, //Scale
+                        SpriteEffects.None, //Sprite Effects
+                        0f); //Layer
+                    Globals.spriteBatch.End();
+                    break;
+                case "Instructions":
+                    Globals.spriteBatch.Begin();
+                    Globals.spriteBatch.Draw(tutorial, //Texture
+                        new Vector2(0, 0), //Position
+                    new Rectangle(0, 0, 1920, 1080), //Source Rectangle
+                        Color.White, // Color Tint
+                        0, //Rotation Angle
+                        new Vector2(.5f, 1), //Origin Of Sprite (where to rotate around)
+                        1, //Scale
+                        SpriteEffects.None, //Sprite Effects
+                        0f); //Layer
+                    Globals.spriteBatch.End();
+                    break;
+
                 case "Start":
 
                     break;

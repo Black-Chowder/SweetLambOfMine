@@ -37,6 +37,12 @@
 /processorParam:TextureFormat=Color
 /build:../Graphics/demon_R2.png;demon_R2.png
 
+#begin ../Graphics/Eggy_Toast_-_Ghost.mp3.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:../Graphics/Eggy_Toast_-_Ghost.mp3.mp3;Eggy_Toast_-_Ghost.mp3.mp3
+
 #begin ../Graphics/generatedtext_2.png
 /importer:TextureImporter
 /processor:TextureProcessor

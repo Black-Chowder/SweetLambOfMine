@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using SharpDX.Direct2D1.Effects;
 using SharpDX.Direct3D9;
 using System.Diagnostics;
@@ -15,6 +16,9 @@ namespace BlackMagic
         Texture2D title;
         Texture2D tutorial;
         Texture2D start;
+        bool first = true;
+
+        Song song;
 
         public Game1()
         {
@@ -54,6 +58,8 @@ namespace BlackMagic
             title = Globals.content.Load<Texture2D>("title");
             tutorial = Globals.content.Load<Texture2D>("tutorial");
             start = Globals.content.Load<Texture2D>("generatedtext_2");
+
+            song = Globals.content.Load<Song>("Eggy_Toast_-_Ghost.mp3");
 
 
             // TODO: use this.Content to load your game content here
@@ -100,6 +106,10 @@ namespace BlackMagic
         {
             //penumbra.BeginDraw();
             GraphicsDevice.Clear(Color.Purple);
+
+            MediaPlayer.IsRepeating = true;
+            if (first) MediaPlayer.Play(song);
+            first = false;
 
             switch (Globals.GameState)
             {

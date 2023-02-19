@@ -136,3 +136,5 @@ C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-wind
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\title.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\tutorial.xnb
 C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\generatedtext_2.xnb
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\Eggy_Toast_-_Ghost.mp3.wma
+C:\Users\iabla\Documents\GitHub\SweetLambOfMine\BlackMagic\bin\Debug\net6.0-windows\Content\Eggy_Toast_-_Ghost.mp3.xnb

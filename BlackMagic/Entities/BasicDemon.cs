@@ -43,11 +43,13 @@ namespace BlackMagic
             //Set up traits
 
             //Rigidbody
+            
             HitRect hitbox = new HitRect(this);
             rb = new Rigidbody(this);
             rb.hitboxes.Add(hitbox);
             rb.camera = Globals.Camera;
             AddTrait(rb);
+            
 
             //Movement
             movement = new TDMovement(this, 3);
@@ -69,6 +71,21 @@ namespace BlackMagic
         public override void Update(GameTime gameTime)
         {
             friction.coefficient = 2f + .5f * stuckNum;
+
+            foreach (Entity entity in batch.entities)
+            {
+                if (entity is not BasicDemon || entity == this)
+                    continue;
+
+                if (DistanceUtils.getDistance(entity.Pos, this.Pos) < Width)
+                {
+                    float angle = MathF.Atan2(entity.Pos.Y - Pos.Y, entity.Pos.X - Pos.X);
+                    float force = -5f;
+                    Vector2 repelForce = new Vector2(MathF.Cos(angle) * force, MathF.Sin(angle) * force);
+                    DeltaPos += repelForce;
+                }
+            }
+
             base.Update(gameTime);
         }
 

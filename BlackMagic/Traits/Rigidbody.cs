@@ -126,6 +126,7 @@ namespace BlackMagic
         //TODO: Don't create new rays every update.  Use rays from pool of already created rays.  Should improve efficiency
         public override void Update(GameTime gameTime)
         {
+            return;
             if (isOverride) return;
 
             Ray ray;
